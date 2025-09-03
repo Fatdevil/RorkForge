@@ -1,0 +1,12 @@
+// src/components/CodeBox.tsx
+import React from "react";
+export default function CodeBox({ border, children }: { border?: string; children: React.ReactNode }) {
+  return (
+    <pre
+      className="rounded-xl border p-3 text-xs font-mono overflow-auto"
+      style={{ borderColor: border ?? "#1f2937", background: "#0b1220" }}
+    >
+      {typeof children === "string" ? children : JSON.stringify(children, null, 2)}
+    </pre>
+  );
+}
